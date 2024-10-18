@@ -1,0 +1,68 @@
+/*обнуляем поля, задаем фон, шрифт для меню */
+body{
+  margin: 0px;
+  padding: 0px;
+  background: #505084; 
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: black;  
+}
+
+/*задаем место и структуру меню*/
+nav{
+  float: none; 
+  clear: both;
+  width: 30%; 
+  margin: 10% auto;
+  background: #98a7d4; 
+}
+ /*обнуляем поля слева внутри бокса меню и свойства списка*/
+nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav li{
+  float: none; 
+  width: 100%;
+}
+
+nav li a{
+  display: block; 
+  width: 100%; 
+  padding: 20px; 
+  border-left: 5px solid;  
+  position: relative; 
+  z-index: 2;
+  text-decoration: none;
+  color: #444;
+  box-sizing: border-box;  
+  -moz-box-sizing: border-box;  
+  -webkit-box-sizing: border-box; 
+}
+/* задаем узкие цветные полоски перед пунктами меню*/  
+nav li a:hover{ border-bottom: 0px; color: #d0dfea;} 
+nav li:first-child a{ border-left: 10px solid #47d3e3; } 
+nav li:nth-child(2) a{ border-left: 10px solid #d94183; }   
+nav li:nth-child(3) a{ border-left: 10px solid #cdeb36; } 
+nav li:last-child a{ border-left: 10px solid #0d2536; } 
+
+nav li a:after { 
+  content: "";
+  height: 100%; 
+  left: 0; 
+  top: 0; 
+  width: 0px;  
+  position: absolute; 
+  transition: all 0.3s ease 0s; 
+  -webkit-transition: all 1s ease 0s; 
+  z-index: -1;
+}
+/* тут задаем цветные выдвижные плашки*/
+nav li a:hover:after{ width: 50%; }
+nav li:first-child a:after{ background: #2e555e; }
+nav li:nth-child(2) a:after{ background: #fff871; }
+nav li:nth-child(3) a:after{ background: #eb4e6e; }
+nav li:last-child a:after{ background: #96c3e1; } 
+
